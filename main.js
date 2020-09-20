@@ -102,10 +102,26 @@ function drawItem(e) {
   if (item) {
     var html = `<img src='${item.icon}' />
 		  <h1 class='title'>${item.name}</h1>
-		  <div class='description'>${item.description}</div>
-		  <div class='tags'>Tags : ${item.tags ?? 'n/a'}</div>`;
+      <div class='description'>${item.description}</div>`
+
+    if (item.tags)
+      html += `<div class='tags'>Tags : ${item.tags ?? 'n/a'}</div>`;
+
+    if (item.ability)
+      html += `<div class='tags'>Ability : ${item.ability ?? 'n/a'}</div>`;
+
+    if (item.type)
+      html += `<div class='tags'>Type : ${item.type ?? 'n/a'}</div>`;
+
+    if (item.output)
+      html += `<div class='tags'>Output : ${item.output ?? 'n/a'}</div>`;
+
+    if (item.rate_of_fire)
+      html += `<div class='tags'>Rate of fire : ${item.rate_of_fire ?? 'n/a'}</div>`;
+
+    if (item.notes)
+      html += `<div class='tags'>Notes : ${item.notes ?? 'n/a'}</div>`;
+
     $('.item-content').html(html);
   }
 }
-
-

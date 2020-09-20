@@ -1,14 +1,15 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
+	<meta charset="utf-8">
 
-  <title>Neon Abyss Wiki</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+	<title>Neon Abyss Wiki</title>
+	<meta name="description" content="The HTML5 Herald">
+	<meta name="author" content="SitePoint">
 
-  <link rel="stylesheet" href="styles.css?v=1.0">
+	<link rel="stylesheet" href="styles.css?v=1.0">
 
 </head>
 
@@ -16,15 +17,17 @@
 
 	<div class="container">
 		<div class="left">
-			<div class="item-content"></div>
+			<div class="item-content sticky"></div>
 		</div>
 		<div class="right">
-			<h1>Filtres</h1>
-			<div class="filters">
-				<label for="search">Recherche : </label><input id="search" type="text" />
-				<label for="red">Rouge : </label><input id="red" type="checkbox" />
-				<label for="violet">Violet : </label><input id="violet" type="checkbox" />
-				<label for="green">Vert : </label><input id="green" type="checkbox" />
+			<div class="item-filters-content sticky">
+				<h1>Filtres</h1>
+				<div class="filters">
+					<label for="search">Recherche : </label><input id="search" type="text" />
+					<label for="red">Rouge : </label><input id="red" type="checkbox" />
+					<label for="violet">Violet : </label><input id="violet" type="checkbox" />
+					<label for="green">Vert : </label><input id="green" type="checkbox" />
+				</div>
 			</div>
 			<h1>Objets</h1>
 			<div class="list-items"></div>
@@ -33,9 +36,12 @@
 		</div>
 	</div>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+		integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+		crossorigin="anonymous"></script>
 	<script src="items.js"></script>
 	<script src="weapons.js"></script>
 	<script src="main.js"></script>
 </body>
+
 </html>

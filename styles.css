@@ -4,12 +4,13 @@ body {
 	color: white;
 }
 
-html, body, .container {
-	height: 100%;
+html,
+body,
+.container {
 	min-height: 100%;
 }
 
-.container {	
+.container {
 	display: flex;
 	flex-direction: row;
 }
@@ -21,13 +22,24 @@ html, body, .container {
 
 .right {
 	background: url(wild_oliva.png) top left fixed #373737;
-    flex: 1;
+	flex: 1;
 	padding: 10px;
 }
 
-.list-items, .list-weapons {
+.list-items,
+.list-weapons {
 	display: flex;
 	flex-wrap: wrap;
+}
+
+.sticky {
+	position: sticky;
+	top: 0;
+}
+
+.item-filters-content {
+	background: url(wild_oliva.png) top left fixed #373737;
+	padding-bottom: 15px;
 }
 
 .list-group-item:hover {
@@ -37,11 +49,15 @@ html, body, .container {
 
 .list-group-item {
 	display: flex;
-    flex-direction: row;
-    align-items: center;
+	flex-direction: row;
+	align-items: center;
 }
 
 .list-group-item img {
 	height: 50px;
-    width: 50px;
+	width: 50px;
+}
+
+.list-weapons .list-group-item img {
+	padding: 2px;
 }
