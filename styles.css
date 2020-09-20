@@ -1,0 +1,47 @@
+body {
+	margin: 0;
+	background-color: #272727;
+	color: white;
+}
+
+html, body, .container {
+	height: 100%;
+	min-height: 100%;
+}
+
+.container {	
+	display: flex;
+	flex-direction: row;
+}
+
+.left {
+	width: 300px;
+	padding: 10px;
+}
+
+.right {
+	background: url(wild_oliva.png) top left fixed #373737;
+    flex: 1;
+	padding: 10px;
+}
+
+.list-items, .list-weapons {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.list-group-item:hover {
+	background: rgba(255, 255, 255, 0.2);
+	cursor: pointer;
+}
+
+.list-group-item {
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.list-group-item img {
+	height: 50px;
+    width: 50px;
+}
