@@ -105,22 +105,22 @@ function drawItem(e) {
       <div class='description'>${item.description}</div>`
 
     if (item.tags)
-      html += `<div class='tags'>Tags : ${item.tags ?? 'n/a'}</div>`;
+      html += `<h3>Tags :</h3> ${item.tags ?? 'n/a'}`;
 
     if (item.ability)
-      html += `<div class='tags'>Ability : ${item.ability ?? 'n/a'}</div>`;
+      html += `<h3>Ability : </h3>${item.ability ?? 'n/a'}`;
 
     if (item.type)
-      html += `<div class='tags'>Type : ${item.type ?? 'n/a'}</div>`;
+      html += `<h3>Type :</h3> ${item.type ?? 'n/a'}`;
 
     if (item.output)
-      html += `<div class='tags'>Output : ${item.output ?? 'n/a'}</div>`;
+      html += `<h3>Output : </h3>${item.output ?? 'n/a'}`;
 
     if (item.rate_of_fire)
-      html += `<div class='tags'>Rate of fire : ${item.rate_of_fire ?? 'n/a'}</div>`;
+      html += `<h3>Rate of fire : </h3>${item.rate_of_fire ?? 'n/a'}`;
 
     if (item.notes)
-      html += `<div class='tags'>Notes : ${item.notes ?? 'n/a'}</div>`;
+      html += `<h3>Notes : </h3>${item.notes ?? 'n/a'}`;
 
     $('.item-content').html(html);
   }
