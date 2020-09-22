@@ -16,10 +16,15 @@ allItems.push(...items.map((item) => {
 allItems.push(...weapons.map((item) => {
   item.itemType = 'weapon';
   item.name = item.name.replaceAll("'", "");
-  item.icon = "weapons/" + item.name.replaceAll(" ", "_") + ".png"
-  item.animation = "weapons_animations/" + item.name.replaceAll(" ", "_") + "_firing.gif"
+  item.icon = "weapons/" + item.name.replaceAll(" ", "_") + ".png";
+  item.animation = "weapons_animations/" + item.name.replaceAll(" ", "_") + "_firing.gif";
   return item;
 }));
+
+
+colors = allItems.map(i => i.tags).flat(1).filter((value, index, self) => self.indexOf(value) === index).filter(v => v);
+
+console.log(colors);
 
 $(document).ready(function () {
 
@@ -27,38 +32,42 @@ $(document).ready(function () {
 
   drawList(allItems);
 
-  $("#search").on('input', function (e) {
+  $('.filters').append(colors.map((color) => `<input id="${color}" type="checkbox" /><label for="${color}">${color}</label>`));
+
+  $(".filters > input").on('input', function (e) {
     var newList = filterList();
     drawList(newList);
   });
 
-  $("#red").change(function (e) {
-    var newList = filterList();
-    drawList(newList);
-  });
+  // $('.filters > input[type="checkbox"]').on('click', () => {
+  //   var newList = filterList();
+  //   drawList(newList);
+  // });
 
-  $("#violet").change(function (e) {
-    var newList = filterList();
-    drawList(newList);
-  });
+  // $("#red").change(function (e) {
+  //   var newList = filterList();
+  //   drawList(newList);
+  // });
 
-  $("#green").change(function (e) {
-    var newList = filterList();
-    drawList(newList);
-  });
+  // $("#violet").change(function (e) {
+  //   var newList = filterList();
+  //   drawList(newList);
+  // });
+
+  // $("#green").change(function (e) {
+  //   var newList = filterList();
+  //   drawList(newList);
+  // });
 });
 
 function filterList() {
   var text = $("#search").val();
   var tags = [];
 
-  var red = $("#red")[0].checked;
-  var violet = $("#violet")[0].checked;
-  var green = $("#green")[0].checked;
 
-  if (red) { tags.push('red'); }
-  if (violet) { tags.push('violet'); }
-  if (green) { tags.push('green'); }
+  $('.filters > input:checkbox:checked').each(function(index) {
+    tags.push($(this).attr('id'));
+  });
 
   var newList = allItems.filter(function (item) {
     return item.name.toLowerCase().includes(text.toLowerCase()) && tags.every(function (tag) { return item.tags?.includes(tag); });
