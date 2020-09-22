@@ -22,7 +22,11 @@ allItems.push(...weapons.map((item) => {
 }));
 
 
-colors = allItems.map(i => i.tags).flat(1).filter((value, index, self) => self.indexOf(value) === index).filter(v => v);
+colors = allItems.map(i => i.tags)
+.flat(1)
+.filter((value, index, self) => self.indexOf(value) === index)
+.filter(v => v)
+.sort((a, b) => a.localeCompare(b));
 
 console.log(colors);
 
