@@ -16,7 +16,8 @@ allItems.push(...items.map((item) => {
 allItems.push(...weapons.map((item) => {
   item.itemType = 'weapon';
   item.name = item.name.replaceAll("'", "");
-  item.icon = item.icon = "weapons/" + item.name.replaceAll(" ", "_") + ".png"
+  item.icon = "weapons/" + item.name.replaceAll(" ", "_") + ".png"
+  item.animation = "weapons_animations/" + item.name.replaceAll(" ", "_") + "_firing.gif"
   return item;
 }));
 
@@ -76,7 +77,7 @@ function drawList(items) {
     return html;
   }));
 
-  
+
   $('.list-weapons').html(items.filter((item) => item.itemType === 'weapon').map(function (item, index) {
     var html = `<div class='list-group-item' data-name='${item.name}'>
 		  <img src='${item.icon}' />
@@ -121,6 +122,11 @@ function drawItem(e) {
 
     if (item.notes)
       html += `<h3>Notes : </h3>${item.notes ?? 'n/a'}`;
+
+    if (item.animation) {
+      html += `<h3>Animation : </h3>`;
+      html += `<img class="weapons_animations" src="${item.animation}" />`;
+    }
 
     $('.item-content').html(html);
   }

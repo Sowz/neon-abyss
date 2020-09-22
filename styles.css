@@ -61,3 +61,7 @@ body,
 .list-weapons .list-group-item img {
 	padding: 2px;
 }
+
+.weapons_animations {
+	width: 100%;
+}
